@@ -26,7 +26,8 @@ If the schema is not provided, the API will infer key schema of DynamoDB table w
 Depending on the attributes specified in schema, the API will only read these columns in DynamoDB table. 
 
 ## Scala Main to Create Parquet file
-```import org.apache.spark.SparkContext._
+```scala
+import org.apache.spark.SparkContext._
 import org.apache.spark.SparkConf
 import org.apache.spark.sql._
 import org.apache.spark.sql.types._
