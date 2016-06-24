@@ -109,14 +109,14 @@ Below are the details of input data from one of the DynamoDB tables.
 Table Name : prod1.ad-network.configuration
 Hash Key : adnetwork_name (String)
 Range Key : network_id (String)
-Other Attributes : campaign_id(String) , publisher_id(String), transaction_id(String), post_url(String)
+Other Attributes : campaign_id(String) , publisher_id(String), transaction_id(String), post_url(String), tags(String)
 ```
 Sample Input Data
 ```
-adnetwork_id  | network_id | campaign_id | publisher_id | transaction_id | post_url
-------------- | ----------- | ----------- | ----------- | ----------- | ----------- |
-adathaCPR | com.dci+app-installed | MISSING | http://www.xx.com | MISSING |MISSING
-adatha | com.dci+app-installed | MISSING | http://www.yy.com | MISSING |MISSING
+adnetwork_id  | network_id | campaign_id | publisher_id | transaction_id | post_url | tags|
+------------- | ----------- | ----------- | ----------- | ----------- | ----------- |----------- |
+adathaCPR | com.dci+app-installed | MISSING | http://www.xx.com | MISSING |MISSING | null
+adatha | com.dci+app-installed | MISSING | http://www.yy.com | MISSING |MISSING | null|
 ```
 
 ## Output Schema from DataFrame
@@ -124,7 +124,7 @@ Below are the details of output schema and data
 
 In Our code 
 ```bash
- df.printSchema()
+ df.show()
 ```
 This will print
 ```
@@ -137,8 +137,11 @@ root
  |-- tags: string (nullable = true)
  |-- transaction_id: string (nullable = true)
 ```
-Sample Output Data
-df.show will print the dataframe data
+In Our code 
+```bash
+ df.printSchema()
+```
+Will print the output data
 ```
 +---------------+--------------------+-----------+------------+--------------------+-------+--------------+
 | adnetwork_name|          network_id|campaign_id|publisher_id|            post_url|   tags|transaction_id|
