@@ -101,3 +101,19 @@ In Spark Shell execute the command below replacing the your spark environment op
  host> ./bin/spark-submit --class com.dcmn.spark.resource.SparkJob --master <spark-master-url> --name "Spark DynamoDB Parquet" <application-jar>
 ```
 That's it!
+
+## Input Schema from DynamoDB
+Below are the details of input data from one of the DynamoDB tables.
+
+```
+Table Name : prod1.ad-network.configuration
+Hash Key : adnetwork_name (String)
+Range Key : network_id (String)
+```
+Sample Input Data
+```
+adnetwork_id  | network_id | campaign_id | publisher_id | transaction_id | post_url
+------------- | -------------
+adathaCPR | com.dci+app-installed | MISSING | http://www.xx.com | MISSING |MISSING
+adatha | com.dci+app-installed | MISSING | http://www.yy.com | MISSING |MISSING
+```
