@@ -84,20 +84,20 @@ This library is built using sbt. To build an assembly jar, simply run `sbt assem
 ```bash
  host> git clone https://github.com/mhdjunaid/spark-dynamodb
  host> cd spark-dynamodb
-guest> sbt assembly
+ host> sbt assembly
 ```
 ## Configure Spark Master and Worker Locally
 
 Assuming Spark is installed. 
-
-```./sbin/start-master.sh
-./bin/spark-class org.apache.spark.deploy.worker.Worker <spark-master-url>
+```bash
+ host> ./sbin/start-master.sh
+ host> ./bin/spark-class org.apache.spark.deploy.worker.Worker <spark-master-url>
 ```
 
 
 ## Submit to spark
 In Spark Shell execute the command below replacing the your spark environment options.
-
-```./bin/spark-submit --class com.dcmn.spark.resource.SparkJob --master <spark-master-url> --name "Spark DynamoDB Parquet" <application-jar>
+```bash
+ host> ./bin/spark-submit --class com.dcmn.spark.resource.SparkJob --master <spark-master-url> --name "Spark DynamoDB Parquet" <application-jar>
 ```
 That's it!
