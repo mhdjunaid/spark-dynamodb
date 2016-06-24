@@ -18,7 +18,12 @@ object SparkJob {
      val schema = StructType(
       Seq(
         StructField("adnetwork_name", StringType),
-        StructField("network_id", StringType)
+        StructField("network_id", StringType),
+        StructField("campaign_id", StringType),
+        StructField("publisher_id", StringType),
+        StructField("post_url", StringType),
+        StructField("tags", StringType),
+        StructField("transaction_id", StringType)
         )
       ) 
       

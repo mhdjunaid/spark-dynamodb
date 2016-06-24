@@ -1,8 +1,8 @@
-# Spark DynamoDB Library 
+# DynamoDB to Parquet by Spark
 
 ## Introduction 
 This sample project provides support for analyzing data on Amazon DynamoDB using Apache Spark and store as Parquet files . 
-The `DynamoDBRelation` class extends `BaseRelation` with `TableScan` which returns RDD of Rows. The main class `DynamoDBImport` runs the spark job to import data from DynamoDb and convert it into Parquet from Spark DataFrame.
+The `DynamoDBRelation` class extends `BaseRelation` with `TableScan` which returns RDD of Rows. The main class `SparkJob` runs the spark job to import data from DynamoDb and convert it into Parquet from Spark DataFrame.
 
 ## Requirements 
 This project requires: 
