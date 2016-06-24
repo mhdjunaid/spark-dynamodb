@@ -109,11 +109,41 @@ Below are the details of input data from one of the DynamoDB tables.
 Table Name : prod1.ad-network.configuration
 Hash Key : adnetwork_name (String)
 Range Key : network_id (String)
+Other Attributes : campaign_id(String) , publisher_id(String), transaction_id(String), post_url(String)
 ```
 Sample Input Data
 ```
 adnetwork_id  | network_id | campaign_id | publisher_id | transaction_id | post_url
-------------- | -------------
+------------- | ----------- | ----------- | ----------- | ----------- | ----------- |
 adathaCPR | com.dci+app-installed | MISSING | http://www.xx.com | MISSING |MISSING
 adatha | com.dci+app-installed | MISSING | http://www.yy.com | MISSING |MISSING
+```
+
+## Output Schema from DataFrame
+Below are the details of output schema and data
+
+In Our code 
+```bash
+ df.printSchema()
+```
+This will print
+```
+root
+ |-- adnetwork_name: string (nullable = true)
+ |-- network_id: string (nullable = true)
+ |-- campaign_id: string (nullable = true)
+ |-- publisher_id: string (nullable = true)
+ |-- post_url: string (nullable = true)
+ |-- tags: string (nullable = true)
+ |-- transaction_id: string (nullable = true)
+```
+Sample Output Data
+df.show will print the dataframe data
+```
++---------------+--------------------+-----------+------------+--------------------+-------+--------------+
+| adnetwork_name|          network_id|campaign_id|publisher_id|            post_url|   tags|transaction_id|
++---------------+--------------------+-----------+------------+--------------------+-------+--------------+
+|          ICube|DainikBhaskar+app...|    MISSING|     MISSING|http://tracking.i...|   null|       MISSING|
+|          ICube|DivyaBhaskar+app-...|    MISSING|     MISSING|http://tracking.i...|   null|       MISSING|
+|          amlpl|sulekha.businessa...|    MISSING|     MISSING|http://tracking.m...|   null|       MISSING|
 ```
