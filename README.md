@@ -115,8 +115,8 @@ Sample Input Data
 ```
 adnetwork_id  | network_id | campaign_id | publisher_id | transaction_id | post_url | tags|
 ------------- | ----------- | ----------- | ----------- | ----------- | ----------- |----------- |
-adathaCPR | com.dci+app-installed | MISSING | http://www.xx.com | MISSING |MISSING | null
-adatha | com.dci+app-installed | MISSING | http://www.yy.com | MISSING |MISSING | null|
+adCom | GrowrioGames+app-installed | MISSING | http://www.xx.com | MISSING |MISSING | null
+adCom | GrowrioGames+newTask | MISSING | http://www.yy.com | MISSING |MISSING | null|
 ```
 
 ## Output Schema from DataFrame
@@ -146,7 +146,7 @@ Will print the output data
 +---------------+--------------------+-----------+------------+--------------------+-------+--------------+
 | adnetwork_name|          network_id|campaign_id|publisher_id|            post_url|   tags|transaction_id|
 +---------------+--------------------+-----------+------------+--------------------+-------+--------------+
-|          ICube|DainikBhaskar+app...|    MISSING|     MISSING|http://tracking.i...|   null|       MISSING|
-|          ICube|DivyaBhaskar+app-...|    MISSING|     MISSING|http://tracking.i...|   null|       MISSING|
-|          amlpl|sulekha.businessa...|    MISSING|     MISSING|http://tracking.m...|   null|       MISSING|
+|          AdCom|GrowrioGames+app...|    MISSING|     MISSING | http://www.xx.com   null|       MISSING|
+|          AdCom|GrowrioGames+new...|    MISSING|     MISSING |http://www.xx.com |   null|       MISSING|
+|          AdCom|GrowrioGames...|    MISSING|     MISSING | http://www.xx.com  |  null|       MISSING|
 ```
